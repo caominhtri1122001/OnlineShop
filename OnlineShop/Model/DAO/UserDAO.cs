@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model.EF;
+using PagedList;
 namespace Model.DAO
 {
     public class UserDAO
@@ -19,20 +20,67 @@ namespace Model.DAO
             db.SaveChanges();
             return entity.ID;
         }
+
+        public bool Update(User entity)
+        {
+            try
+            {
+                var user = db.Users.Find(entity.ID);
+                user.Name = entity.Name;
+                if (!string.IsNullOrEmpty(entity.Password))
+                {
+                    user.Password = entity.Password;
+                }
+                user.Address = entity.Address;
+                user.Email = entity.Email;
+                user.ModifiedBy = entity.ModifiedBy;
+                user.ModifiedDate = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }        
+        }
+        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        {
+            return db.Users.OrderByDescending(x=>x.CreatedDate).ToPagedList(page,pageSize);
+        }
         public User getByID(string userName)
         {
             return db.Users.SingleOrDefault(x=>x.UserName == userName);
         }
-        public bool Login(string userName,string passWord)
+
+        public User ViewDetail(int ID)
         {
-            var result = db.Users.Count(x => x.UserName == userName && x.Password == passWord);
-            if (result > 0)
+            return db.Users.Find(ID);
+        }
+
+        public int Login(string userName,string passWord)
+        {
+            var result = db.Users.SingleOrDefault(x => x.UserName == userName );
+            if (result == null)
             {
-                return true;
+                return 0;
             }
             else
             {
-                return false;
+                if (result.Status == false)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (result.Password == passWord)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -2;
+                    }
+                }
             }
         }
     }
