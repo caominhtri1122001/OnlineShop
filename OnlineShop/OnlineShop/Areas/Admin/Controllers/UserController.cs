@@ -13,11 +13,11 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
-        public ActionResult Index(int page = 1,int pageSize = 1)
+        public ActionResult Index(string searchString ,int page = 1,int pageSize = 10)
         {
             var dao = new UserDAO();
-
-            var model = dao.ListAllPaging(page, pageSize);
+            var model = dao.ListAllPaging(searchString,page, pageSize);
+            ViewBag.SearchString = searchString;
             return View(model);
         }
         [HttpGet]
@@ -78,6 +78,12 @@ namespace OnlineShop.Areas.Admin.Controllers
                 }
             }
             return View("Index");
+        }
+        [HttpDelete]
+        public ActionResult Delete(int ID)
+        {
+            new UserDAO().Delete(ID);
+            return RedirectToAction("Index");
         }
     }
 }

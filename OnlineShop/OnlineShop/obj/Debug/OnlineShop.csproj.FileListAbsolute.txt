@@ -172,3 +172,4 @@ C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\OnlineShop\bin\PagedList.dll
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\OnlineShop\bin\PagedList.Mvc.dll
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\OnlineShop\bin\PagedList.xml
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\OnlineShop\bin\PagedList.Mvc.xml
+C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\OnlineShop\bin\CKFinder.dll

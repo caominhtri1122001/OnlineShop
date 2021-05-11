@@ -17,7 +17,6 @@ C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\EntityFramew
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\EntityFramework.xml
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\obj\Debug\Model.csprojAssemblyReference.cache
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\obj\Debug\Model.dll
@@ -26,3 +25,4 @@ C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\PagedList.dl
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\PagedList.Mvc.dll
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\PagedList.xml
 C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\Cao Minh Tri\Desktop\OnlineShop\OnlineShop\Model\obj\Debug\Model.csprojAssemblyReference.cache

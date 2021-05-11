@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template-->
     <link href="~/Assets/Admin/css/sb-admin-2.min.css" rel="stylesheet">
+ 
 
 </head>
 
@@ -273,7 +274,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="~/Assets/Admin/img/undraw_profile_1.svg"
                                              alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -287,7 +288,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="~/Assets/Admin/img/undraw_profile_2.svg"
                                              alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -301,7 +302,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="~/Assets/Admin/img/undraw_profile_3.svg"
                                              alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -372,7 +373,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">@RenderSection("header",required: true)</h1>
+                    <h1 class="h3 mb-4 text-gray-800">@RenderSection("header", required: true)</h1>
                     @RenderBody()
                 </div>
                 <!-- /.container-fluid -->
@@ -419,16 +420,21 @@
         </div>
     </div>
 
+    <!--JQuery-->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Assets/Admin/Jquery/jquery.unobtrusive-ajax.min.js"></script>
     <!-- Bootstrap core JavaScript-->
     <script src="~/Assets/Admin/vendor/jquery/jquery.min.js"></script>
     <script src="~/Assets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="~/Assets/Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    <script src="~/Assets/Admin/js/plugins/ckfinder/ckfinder.js"></script>
+    <script src="~/Assets/Admin/js/plugins/ckeditor/ckeditor.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="~/Assets/Admin/js/sb-admin-2.min.js"></script>
 
+
+    @RenderSection("jsFooter", required: false)
 </body>
 
 </html>
