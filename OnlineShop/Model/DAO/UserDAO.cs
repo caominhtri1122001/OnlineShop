@@ -59,6 +59,14 @@ namespace Model.DAO
             }          
         }
 
+        public bool ChangeStatus(long ID)
+        {
+            var user = db.Users.Find(ID);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
+        }
+
         public IEnumerable<User> ListAllPaging(string searchString,int page, int pageSize)
         {
             IQueryable<User> model = db.Users;

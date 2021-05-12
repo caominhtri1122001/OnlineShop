@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
   "use strict"; // Start of use strict
 
   // Toggle the side navigation
@@ -52,5 +52,8 @@
     }, 1000, 'easeInOutExpo');
     e.preventDefault();
   });
+
+    $('AlertBox').removeClass('hide');
+    $('AlertBox').delay(1000).slideUp(500);
 
 })(jQuery); // End of use strict

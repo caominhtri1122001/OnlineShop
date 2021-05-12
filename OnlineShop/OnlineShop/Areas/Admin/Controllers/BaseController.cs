@@ -19,5 +19,22 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             base.OnActionExecuting(filterContext);
         }
+
+        protected void SetAlert(string Message,string Type)
+        {
+            TempData["AlertMessage"] = Message;
+            if (Type == "success")
+            {
+                TempData["AlertType"] = "alert-success";
+            }
+            else if (Type == "warning")
+            {
+                TempData["AlertType"] = "alert-warning";
+            }
+            else if (Type == "error")
+            {
+                TempData["AlertType"] = "alert-danger";
+            }
+        }
     }
 }
