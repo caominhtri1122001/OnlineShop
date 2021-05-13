@@ -7,23 +7,22 @@ using System.Threading.Tasks;
 
 namespace Model.DAO
 {
-    public class CategoryDAO
+    public class ProductCategoryDAO
     {
         OnlineShopDbContext db = null;
-        public CategoryDAO()
+        public ProductCategoryDAO()
         {
             db = new OnlineShopDbContext();
         }
-
-        public List<Category> ListAll()
+        
+        public List<ProductCategory> ListAll()
         {
-            return db.Categories.Where(x => x.Status == true).ToList();
+            return db.ProductCategories.Where(x => x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
 
         public ProductCategory ViewDetail(long ID)
         {
             return db.ProductCategories.Find(ID);
-
         }
     }
 }
