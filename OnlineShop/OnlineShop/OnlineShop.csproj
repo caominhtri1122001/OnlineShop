@@ -2794,6 +2794,7 @@
     <Content Include="Assets\Client\js\controller\cartController.js" />
     <Content Include="Assets\Client\js\easing.js" />
     <Content Include="Assets\Client\js\easyResponsiveTabs.js" />
+    <Content Include="Assets\Client\js\jquery-1.11.3.min.js" />
     <Content Include="Assets\Client\js\jquery-1.7.2.min.js" />
     <Content Include="Assets\Client\js\jquery.accordion.js" />
     <Content Include="Assets\Client\js\jquery.easing.js" />
