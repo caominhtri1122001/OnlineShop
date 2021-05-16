@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using Model.EF;
 
 namespace OnlineShop.Controllers
 {
@@ -102,6 +103,57 @@ namespace OnlineShop.Controllers
                 Session[CartSession] = list;
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Payment()
+        {
+            var cart = Session[CartSession];
+            var list = new List<CartItem>();
+            if (cart != null)
+            {
+                list = (List<CartItem>)cart;
+            }
+            return View(list);
+        }
+
+        [HttpPost]
+        public ActionResult Payment(string shipName,string mobile,string address ,string email)
+        {
+            var order = new Order();
+            order.CreatedDate = DateTime.Now;
+            order.ShipAddress = address;
+            order.ShipName = shipName;
+            order.ShipMobile = mobile;
+            order.ShipEmail = email;
+
+            try
+            {
+                var id = new OrderDAO().Insert(order);
+                var cart = (List<CartItem>)Session[CartSession];
+                var detailDAO = new OrderDetailDAO();
+                foreach (var item in cart)
+                {
+                    var orderDetail = new OrderDetail();
+                    orderDetail.ProductID = item.Product.ID;
+                    orderDetail.OrderID = id;
+                    orderDetail.Price = item.Product.Price;
+                    orderDetail.Quantity = item.Quantity;
+                    detailDAO.Insert(orderDetail);
+                }
+            }
+            catch(Exception ex)
+            {
+                return Redirect("/loi-thanh-toan");
+                throw;
+            }
+
+            return Redirect("/hoan-thanh");
+        }
+
+        public ActionResult Success()
+        {
+            return View();
         }
     }
 }
