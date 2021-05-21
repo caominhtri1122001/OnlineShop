@@ -35,10 +35,23 @@ namespace OnlineShop
           );
 
             routes.MapRoute(
+              name: "Contact",
+              url: "lien-he",
+              defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+              namespaces: new[] { "OnlineShop.Controllers" }
+          );
+
+            routes.MapRoute(
             name: "Cart",
             url: "gio-hang",
             defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional },
             namespaces: new[] { "OnlineShop.Controllers" }
+        );
+            routes.MapRoute(
+           name: "Register",
+           url: "dang-ky",
+           defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+           namespaces: new[] { "OnlineShop.Controllers" }
         );
 
             routes.MapRoute(
