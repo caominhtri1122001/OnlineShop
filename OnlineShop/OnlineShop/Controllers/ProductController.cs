@@ -44,6 +44,7 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration = int.MaxValue,VaryByParam = "proID")]
         public ActionResult Detail(long proID)
         {
             var product = new ProductDAO().ViewDetail(proID);

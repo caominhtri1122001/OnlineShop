@@ -47,6 +47,13 @@ namespace OnlineShop
             defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional },
             namespaces: new[] { "OnlineShop.Controllers" }
         );
+
+            routes.MapRoute(
+           name: "Login",
+           url: "dang-nhap",
+           defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+           namespaces: new[] { "OnlineShop.Controllers" }
+        );
             routes.MapRoute(
            name: "Register",
            url: "dang-ky",
